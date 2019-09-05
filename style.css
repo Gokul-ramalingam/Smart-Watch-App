@@ -64,8 +64,13 @@
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 5%;
+    overflow: auto;
 }
-
+::-webkit-scrollbar {
+    width : 2px;
+    background: transparent; 
+    /* make scrollbar transparent */
+}
 
 .container-fluid .row .content .strapBottom .button1{
     width: 20%;
@@ -150,4 +155,29 @@
 #quotes{
     color: #FF3031;
     font-size: 1.5em;
+}
+
+/* #messageScreen{
+    display: none;
+} */
+#messageTitle{
+    color: #1890f0;
+}
+
+#time{
+    color: #F8F9F9;
+    margin-left: 33%;
+}
+
+#receivedMessages{
+    margin-top: 10%;
+    margin-left: .1%;
+    display: block;
+}
+
+#receivedMessages h6{
+    width:95%;
+    height: 20%;
+    background-color: #1890f0;
+    border-radius: 5%;
 }
