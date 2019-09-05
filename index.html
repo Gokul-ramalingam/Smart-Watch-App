@@ -30,32 +30,33 @@
                </div> 
                <div class="row screen"> 
                 <div class="col main">
-                  <div class="col-xs-8">
-                    <div class="row" id="wish">
-                      <div class="col-xs-8">
-                       <span>Good Morning!</span>&nbsp;&nbsp;&nbsp;
-                      </div>
-                      <div class="col-xs-4">
-                        <span>Weather</span>
-                        <i class="fa fa-cloud" aria-hidden="true"></i>
-                      </div>
-                    </div>
+                  <div id="initialScreen">
+                  <div class="row" id="wish">
+                   <div class="col">
+                     <div class="row" id="wishBasedOnTime">
+                         Good Morning
+                     </div>
+                     <div class="row" id="weather">
+                        <span>Cloudy <i class="fa fa-cloud"></i></span> 
+                     </div>
+                   </div>
+                  </div>
+
+                  
                     <div id="hour">
                       <b>10</b>
                     </div>
                     <div id="min">
                       <b>19</b>
                     </div>
-                  </div>
-                  <div class="col-xs-4">
-                     <div>
-                        
+                     <div id="quotes">
+                     <marquee behavior="scroll" direction="left">Don't let yesterday take up too much of today</marquee>
                      </div>
-                  </div>
+                    </div>
                 </div>
                 </div> 
               <div class="row strapBottom">
-                <div class="button1">
+                <div class="button1" onclick="trial()">
                   <i class="fa fa-comments"></i>
                 </div>
                 <div class="button2">
@@ -69,4 +70,5 @@
         </div>
       </div>
     </body>
+    <script src="app.js"></script>
 </html>

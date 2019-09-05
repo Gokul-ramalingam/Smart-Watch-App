@@ -113,8 +113,24 @@
     margin-left: 28%;
 }
 
+#wish{
+    margin-top:5%;
+}
+
+#wishBasedOnTime{
+    color: #FF3031;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
+#weather{
+    color: #F8F9F9;
+    font-size: 1.5em;
+    justify-content: center;
+}
+
 #hour{
-    margin-top: 40%;
+    margin-top: 15%;
     font-size: 6em;
     text-align: center;
     color: #F8F9F9;
@@ -127,4 +143,11 @@
     text-align: center;
     color: #FF3031;
     font-family: sans-serif;
+    line-height: 1.3em;
+}
+
+
+#quotes{
+    color: #FF3031;
+    font-size: 1.5em;
 }
