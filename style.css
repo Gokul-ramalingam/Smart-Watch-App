@@ -67,11 +67,14 @@
     overflow: auto;
 }
 ::-webkit-scrollbar {
-    width : 2px;
+    width : 0px;
     background: transparent; 
     /* make scrollbar transparent */
 }
-
+.disable-scrollbars {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+  }
 .container-fluid .row .content .strapBottom .button1{
     width: 20%;
     height: 30%;
@@ -180,4 +183,23 @@
     height: 20%;
     background-color: #1890f0;
     border-radius: 5%;
+}
+#individualText{
+    width: 95%;
+    margin-left: 2.6%;
+}
+
+#textMessage{
+   margin-top: 20%; 
+   background-color: #FF3031;
+   height: 150%;
+   border-radius: 10%;
+   text-align: center;
+}
+
+#indicator{
+    margin-top: 55%;
+    text-align: center;
+    color: #FF3031;
+    font-size: .8em;
 }
