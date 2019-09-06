@@ -70,7 +70,7 @@
                         </div>
                       </div>
                       <div class="row" id="receivedMessages">
-                        <h6 id="messageList" onclick="func1()">55555 <br><span>Sample text</span></h6>
+                        <!-- <h6 id="messageList" onclick="func1()"><b id="number"></b><br><span id="text"></span></h6> -->
                       </div>
                     </div>
                     <!-- Ends Here Part 2 -->
@@ -85,8 +85,8 @@
                            </div>
                            <div class="row" id="individualText">
                              <div class="col" id="textMessage">
-                                <b>55555</b><br>
-                                <span>Sample text message for testing is here</span>
+                                <b id="individualNumber"></b><br>
+                                <span id="individualMessage"></span>
                              </div>
                             </div>
                             <div class="col" id="indicator">
@@ -160,6 +160,36 @@
                     </div>
                     </div>
                     <!--Ends Here Part5-->
+
+
+<!--Begins Here Part6-->
+<div id="timerInputScreen">
+    <div class="row"> 
+    <div class="col" id="mTimer">
+      Timer
+   </div>
+   <div class="col" id="mtime">
+      10:19
+   </div>
+  </div>
+  <div id="timer">
+      <div class="row" id="inputRow">
+          <div class="col">
+              <div>
+                <input type=text id="inputTime" name="input" value="" placeholder="12:00:00"> 
+              </div>
+         </div>
+      </div> 
+      <div class="row">
+          <div id="pauseButton" class="col">
+            <i class="fa fa-play" onclick="enableTimerWindow()"></i>
+          </div>
+        </div>
+  </div>
+  </div>
+  <!--Ends Here Part6-->
+
+
                 </div>
                 </div> 
               <div class="row strapBottom">
@@ -169,7 +199,7 @@
                 <div class="button2" onclick="enableMusicWindow()">
                  <i class="fa fa-music"></i>
                 </div>
-                <div class="button3" onclick="enableTimerWindow()">
+                <div class="button3" onclick="enableInputTimerWindow()">
                   <i class="fa fa-clock-o"></i>
                 </div>
               </div>
