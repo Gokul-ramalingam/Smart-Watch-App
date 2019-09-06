@@ -95,16 +95,81 @@
                        </div>
                      </div>
                     <!--Ends Here Part 3-->
+
+                    <!--Begins Here Part 4-->
+                    <div id="musicScreen">
+                        <div class="row">
+                            <div class="col" id="musicTitle">
+                               Music
+                            </div>
+                            <div class="col" id="mtime">
+                               10:19
+                            </div>
+                          </div>
+                          <div id="playerList">
+
+                            <iframe
+                            id="frame-id"
+                            frameborder="0" 
+                            width="225"     
+                            height="80"
+                            src=""
+                            allow="encrypted-media">    
+                           </iframe>
+
+                          </div>
+                          
+                    </div>
+                    <!--Ends Here Part4-->
+                    <!--Begins Here Part5-->
+                    <div id="timerScreen">
+                      <div class="row"> 
+                      <div class="col" id="mTimer">
+                        Timer
+                     </div>
+                     <div class="col" id="mtime">
+                        10:19
+                     </div>
+                    </div>
+                    <div id="timer">
+                        <div class="row" id="clockdiv">
+                            <div class="col">
+                                <div>
+                                    <b><span class="hours"></span></b>
+                                    <div id="hourTitle" class="smalltext">Hours</div>
+                                  </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <b><span id="minute" class="minutes"></span></b>
+                                    <div id="minuteTitle" class="smalltext">Minutes</div>
+                                  </div>
+                            </div>
+                            <div class="col">
+                                <div>
+                                    <b><span id="second" class="seconds"></span></b>
+                                    <div id="secondTitle" class="smalltext">Seconds</div>
+                                  </div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                          <div id="pauseButton" class="col">
+                            <i class="fa fa-play"></i>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                    <!--Ends Here Part5-->
                 </div>
                 </div> 
               <div class="row strapBottom">
-                <div class="button1" onclick="trial()">
+                <div class="button1" onclick="enableMessageWindow()">
                   <i class="fa fa-comments"></i>
                 </div>
-                <div class="button2">
+                <div class="button2" onclick="enableMusicWindow()">
                  <i class="fa fa-music"></i>
                 </div>
-                <div class="button3">
+                <div class="button3" onclick="enableTimerWindow()">
                   <i class="fa fa-clock-o"></i>
                 </div>
               </div>
@@ -115,6 +180,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
    </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="app.js"></script>
 </html>
