@@ -30,7 +30,7 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/playlists/4hknLqR95bP0hpTBTQxrsd',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQCv-scUHsLaMuAgH7mcMySD12xGwoqzz4g9CUFJyN_AkoZbiH_BLr2qu2NIiisEMqBr3wfad6gQ2ofoG7r7eE5mtdwUkKHerrLSN25-94EEE2veegfxq--SG1sQSCp8M4p8ymJjyg3RGnMdwYXaUz0-GAFxNXphZCHLm6x8gFEmbe3K9Mkl&refresh_token=AQA15Wuq50YrJdgyyPr9EffeFQoXT2oma1_BK6KsKNlTYtIiiq4QYGOH7Wzt7QjljJZJcp9HeJuSF68Wlu30DxuYtd3PPo0sVulleQze_11SSPfm0VeLS896wPz2Nmxim5ZZfw'
+        'Authorization' : 'Bearer ' + 'BQBA7MQL3soPHUEivNskDnTNOyCyhsRo0dZ1sEVqmlqVfcSI_DzlSPnCQ9xf04Zvpkz0vt1sXSoeEdk2Ll-7CKTme195d864pKXuQBKPikvZNAOAiBsIycb56aZfTbowcb7saVvxXVf9hgEMsr-kAnBmIiEpejDXjoU6z1LGHZyeymavnxHL&refresh_token=AQDS5UhSiM3xGdHNZxAWC1c9nD3n1Y_SEVdsHpH0Rpak6GIj08WyI9qiIcW3P-ROg4uHEDSEjaoU17lKGyxPoUxJzOCnQdc1eYt4DXvZO6S33oZ9X1-jKBEE_UXGre1QUwDW4Q'
     },
     success: function(data) {
         // console.log(data.uri);
