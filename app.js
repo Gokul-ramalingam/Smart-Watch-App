@@ -3,22 +3,24 @@ let messageArray=[
     {id:2,from:'56734',message:"This is message 2"},
     {id:3,from:'66677',message:"This is message 3"},
     {id:4,from:'78734',message:"This is message 4"},
-    {id:5,from:'84734',message:"this is message 5"},
+    {id:5,from:'84734',message:"This is message 5"},
     {id:6,from:'78546',message:"This is message 6"}
 ]
 
 // let array1 = [];
 
-function enableMessageWindow(){
-    $("#initialScreen").hide();
-    $("#musicScreen").hide();
-    $("#timerScreen").hide();
-    $("#textScreen").hide();
-    $(".button1").css("background-color",'#1890f0');
-    $(".button3").css("background-color",'#1b1b1b');
-    $(".button2").css("background-color",'#1b1b1b');
-    $("#messageScreen").show();
-}
+// function enableMessageWindow(){
+//     $("#initialScreen").hide();
+//     $("#musicScreen").hide();
+//     $("#timerScreen").hide();
+//     $("#textScreen").hide();
+//     $("#timerInputScreen").hide();
+//     $("#button1").css("color",'#1890f0');
+//     $("#button3").css("color",'#bbaeae');
+//     $("#button2").css("color",'#bbaeae');
+//     $("#messageScreen").show();
+    
+// }
 
 var b = new Date();
 
@@ -40,7 +42,7 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/me/playlists',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQAzCr67Vh5MwOZ5WtxO1wZXsqSprqXMZlEV95o1ZFZcc3jR1-xd-ma47KhWqDZ2MRhSEJ3XLqUJzKU3QJRjHfGts6iH8G44s91_RIDuCAP5N6CfdYMVU72u7ZSHJOMXKmO8LPvC_fuqQ6lwuOCyh4C9MKmwCFoVh-7hXy0ZpZcgoKNfR93v&refresh_token=AQA_K-Dx0E_BZ2pqVl0She9_xZ8f-Q08CyQWP5tKgLwpL_HhH6gsWn46WtsMuUhx1AI6G7249iMwToURO1lejz94bfXgZjG3qV6TKxRXYYO1UMK2SDWVKAwapZGuf9RkF-NOvg'
+        'Authorization' : 'Bearer ' + 'BQAsoyKKYDJmPlZrRstbAu5MbrSY0Iy8B4vdU_wbgbYP0ivLoHZQI_oncmwgQDZSJMc7GOCgPXbTByPhFye5I5rBwRkl5CAZ1V62tbONSlH2Z46UYHCylwSOeG0YKUdqW46T5rPk0SSc8fTANGBrKkWe_b_blXyNqyR9ussIzaRZmwV3PZ0m&refresh_token=AQCh20IibX7paA_jpbuc0Fnobs-UR6hYy8j2tJtSCSZFt2dLuBO64lFgr6G2sPe-3KP2sm-Hl679GthZha8Grvv4k0sGNG5J2Vt9ezUhtOzOf0EFdhWXBoFDU9yRjnG5n-tZJQ'
     },
     success: function(data) {
         console.log(data.items[0].uri);
@@ -74,17 +76,18 @@ function enableMessageWindow(){
     $("#musicScreen").hide();
     $("#timerScreen").hide();
     $("#textScreen").hide();
-    $(".button1").css("background-color",'#1890f0');
-    $(".button3").css("background-color",'#1b1b1b');
-    $(".button2").css("background-color",'#1b1b1b');
+    $("#button1").css("color",'#1890f0');
+    $("#button3").css("color",'#bbaeae');
+    $("#button2").css("color",'#bbaeae');
     $("#messageScreen").show();
+    $("#timerInputScreen").hide();
 }
 
 function enableMusicWindow(){
     $("#initialScreen").hide();
-    $(".button2").css("background-color",'#1890f0');
-    $(".button3").css("background-color",'#1b1b1b');
-    $(".button1").css("background-color",'#1b1b1b');
+    $("#button2").css("color",'#1890f0');
+    $("#button3").css("color",'#bbaeae');
+    $("#button1").css("color",'#bbaeae');
     $("#messageScreen").hide();
     $("#musicScreen").show();
     $("#textScreen").hide();
@@ -94,9 +97,9 @@ function enableMusicWindow(){
 
 function enableTimerWindow(){
     $("#initialScreen").hide();
-    $(".button3").css("background-color", '#1890f0');
-    $(".button2").css("background-color",'#1b1b1b');
-    $(".button1").css("background-color",'#1b1b1b');
+    $("#button3").css("color", '#1890f0');
+    $("#button2").css("color",'#bbaeae');
+    $("#button1").css("color",'#bbaeae');
     $("#messageScreen").hide();
     $("#musicScreen").hide();
     $("#textScreen").hide();
@@ -106,9 +109,9 @@ function enableTimerWindow(){
 
 function enableInputTimerWindow(){
     $("#initialScreen").hide();
-    $(".button3").css("background-color", '#1890f0');
-    $(".button2").css("background-color",'#1b1b1b');
-    $(".button1").css("background-color",'#1b1b1b');
+    $("#button3").css("color", '#1890f0');
+    $("#button2").css("color",'#bbaeae');
+    $("#button1").css("color",'#bbaeae');
     $("#messageScreen").hide();
     $("#musicScreen").hide();
     $("#textScreen").hide();

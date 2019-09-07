@@ -55,6 +55,7 @@
     background: #242426;
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
+    position: relative;
 }
 
 .container-fluid .row .content .screen .main{
@@ -76,7 +77,7 @@
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* IE 10+ */
   }
-.container-fluid .row .content .strapBottom .button1{
+/* .container-fluid .row .content .strapBottom .button1{
     width: 20%;
     height: 30%;
     background:#1b1b1b;
@@ -84,13 +85,13 @@
     margin-top: 15%;
     margin-left:15%;
     cursor: pointer;
+} */
+
+#button1:hover{
+    color: #1890f0 !important; 
 }
 
-.container-fluid .row .content .strapBottom .button1:hover{
-    background-color: #1890f0;
-}
-
-.container-fluid .row .content .strapBottom .button2{
+/* .container-fluid .row .content .strapBottom .button2{
     width: 20%;
     height: 30%;
     background:#1b1b1b;
@@ -98,17 +99,17 @@
     margin-top: 15%;
     margin-left:5%;
     cursor: pointer;
+} */
+
+#button2:hover{
+    color: #1890f0 !important;
 }
 
-.container-fluid .row .content .strapBottom .button2:hover{
-    background-color: #1890f0;
+#button3:hover{
+   color: #1890f0 !important;
 }
 
-.container-fluid .row .content .strapBottom .button3:hover{
-    background-color: #1890f0;
-}
-
-.container-fluid .row .content .strapBottom .button3{
+/* .container-fluid .row .content .strapBottom .button3{
     width: 20%;
     height: 30%;
     background:#1b1b1b;
@@ -116,26 +117,33 @@
     margin-top: 15%;
     margin-left:5%;
     cursor: pointer;
-}
-.container-fluid .row .content .strapBottom .button1 i{
-    font-size:1em;  
+} */
+
+#button1{
+    font-size:1.5em;  
     color:#bbaeae;
-    margin-top:15%;
-    margin-left: 25%;
+    margin-top:50%;
+    /* margin-left: 15%; */
+    cursor: pointer;
+    position: absolute;
 }
 
-.container-fluid .row .content .strapBottom .button2 i{
-    font-size:1em;  
+#button2{
+    font-size:1.5em;  
     color:#bbaeae;
-    margin-top:15%;
-    margin-left: 25%;
+    margin-top:50%;
+    cursor: pointer;
+    /* margin-left: 15%; */
+    position: absolute;
 }
 
-.container-fluid .row .content .strapBottom .button3 i{
-    font-size:1em;  
+ #button3{
+    font-size:1.5em;  
     color:#bbaeae;
-    margin-top:18%;
-    margin-left: 28%;
+    margin-top:50%;
+    cursor: pointer;
+    /* margin-left: 15%; */
+    position: absolute;
 }
 
 #wish{
@@ -305,9 +313,7 @@
 }
 
 #frame-id{
-    margin-top: 45%;
-    padding: 0%;
-    border-radius: 5%;
+    overflow:hidden;height:150%;width:100%;margin-top: 10%;
 }
 
 #inputTime{

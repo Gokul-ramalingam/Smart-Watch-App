@@ -1,7 +1,7 @@
 <!-- Author      : Gokul 
      Description : This is a web based smart watch application which provides various 
      features to the users with enlightened user design and user experience 
-     including app for text messages, music ,timer -->
+     with text messages, music ,timer functionalities -->
 
 <html>
     <head>
@@ -193,14 +193,14 @@
                 </div>
                 </div> 
               <div class="row strapBottom">
-                <div class="button1" onclick="enableMessageWindow()">
-                  <i class="fa fa-comments"></i>
+                <div class="col" id="buttonColumn1">
+                  <i class="fa fa-comments" onclick="enableMessageWindow()" id="button1"></i>
                 </div>
-                <div class="button2" onclick="enableMusicWindow()">
-                 <i class="fa fa-music"></i>
+                <div class="col" id="buttonColumn2">
+                 <i class="fa fa-music" onclick="enableMusicWindow()" id="button2"></i>
                 </div>
-                <div class="button3" onclick="enableTimerWindow()">
-                  <i class="fa fa-clock-o"></i>
+                <div class="col" id="buttonColumn3">
+                  <i class="fa fa-clock-o" onclick="enableTimerWindow()" id="button3"></i>
                 </div>
               </div>
             </div>
