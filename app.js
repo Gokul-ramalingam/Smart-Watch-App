@@ -7,7 +7,7 @@ let messageArray=[
     {id:6,from:'78546',message:"This is message 6"}
 ]
 
-let array1 = [];
+// let array1 = [];
 
 function enableMessageWindow(){
     $("#initialScreen").hide();
@@ -40,7 +40,7 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/me/playlists',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQCrYWa-yedEtQP0dI9_Jtqft_L0ShKd_IeADFExaelJDauPGo-z87lJMVsW8mOGWelaIpCS-JEN6N8e0-OpKrw1dAzjyTh25wLcHouol1bBIFzf0JDVAGGJN043m2JQ4w9FLycSCv2HYDu-KKAE84W4Ln_O0Jv0III8nJWHW6Bdm7FgslM6&refresh_token=AQBoaFnpSUo49OcJMz_hiwUEZwL6wCs7mxtAOttQ9LlGZv7TVFs3dyajwwuMSCipnh0kSd1MahWgts0lg4SDQxtBkpQoY8etOAWr5qqVUhgYbQS6P1VmnMiZrhykFE02hbNNBA'
+        'Authorization' : 'Bearer ' + 'BQAzCr67Vh5MwOZ5WtxO1wZXsqSprqXMZlEV95o1ZFZcc3jR1-xd-ma47KhWqDZ2MRhSEJ3XLqUJzKU3QJRjHfGts6iH8G44s91_RIDuCAP5N6CfdYMVU72u7ZSHJOMXKmO8LPvC_fuqQ6lwuOCyh4C9MKmwCFoVh-7hXy0ZpZcgoKNfR93v&refresh_token=AQA_K-Dx0E_BZ2pqVl0She9_xZ8f-Q08CyQWP5tKgLwpL_HhH6gsWn46WtsMuUhx1AI6G7249iMwToURO1lejz94bfXgZjG3qV6TKxRXYYO1UMK2SDWVKAwapZGuf9RkF-NOvg'
     },
     success: function(data) {
         console.log(data.items[0].uri);
@@ -138,15 +138,21 @@ function timerWatch(){
       if(hours >= 13)
         hours -= 12;
      }
-
+     let hr = hours;
      if(hours < 10)
+     {
      $("#hour").html("0"+hours);
+      hr = "0"+hours;
+     }
      else
      $("#hour").html(hours);
      $("#min").html(minutes);
      
      $("#wishBasedOnTime").html(wishInString);
-     
+     $("#time").html(hr+":"+minutes);
+     $("#mtime").html(hr+":"+minutes);
+     $("#ttime").html(hr+":"+minutes);
+     $("#ltime").html(hr+":"+minutes);
     }
 
     let date = new Date();
