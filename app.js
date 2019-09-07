@@ -43,13 +43,23 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/me/playlists',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQAsoyKKYDJmPlZrRstbAu5MbrSY0Iy8B4vdU_wbgbYP0ivLoHZQI_oncmwgQDZSJMc7GOCgPXbTByPhFye5I5rBwRkl5CAZ1V62tbONSlH2Z46UYHCylwSOeG0YKUdqW46T5rPk0SSc8fTANGBrKkWe_b_blXyNqyR9ussIzaRZmwV3PZ0m&refresh_token=AQCh20IibX7paA_jpbuc0Fnobs-UR6hYy8j2tJtSCSZFt2dLuBO64lFgr6G2sPe-3KP2sm-Hl679GthZha8Grvv4k0sGNG5J2Vt9ezUhtOzOf0EFdhWXBoFDU9yRjnG5n-tZJQ'
+        'Authorization' : 'Bearer ' + 'BQB_9ffaprEIJsqz6hUP4REgFDUugzFhSbVoZS0jy4n6v3L-T9G95lQux2_k4sXr--U3T-8tJC-_2miOTtViUYdrADd6kRXeX7lwYCZ7EWhpGVXC8PnfemAL-JF7Oo--pHGzaHyMxfum1FOGIUS9UHeZw1QaxJQrUBUk38iy0Enzoru1IJzR&refresh_token=AQAVArc5C1GSo1GwGAv_sYG8TyE1-W3vCla0WhfD8Hvzj111KO9dt-dGLZpUXTSIo_qFJ1gC180bR0MrvCdWjkdQiSqsziFOoCBGQy2rAXKfBRiMrs8k18-Uos9mM0khg8ZsDA'
     },
     success: function(data) {
         console.log(data.items[0].uri);
         $('#frame-id').attr("src", "https://embed.spotify.com/?uri="+data.items[0].uri);
     }
 });
+
+   $.ajax({
+       url:'https://favqs.com/api/qotd',
+       type: 'GET',
+       success:function(data){
+           $("#quote").text(data.quote.body);
+           console.log(data);
+           console.log($("#quote"));
+       }
+   })
     
 });
 
@@ -137,6 +147,17 @@ function homeScreen(){
     $("#timerInputScreen").hide();
     $("#initialScreen").show();
     $("#homeButton").css("color",'#FF3031');
+
+    // $.ajax({
+    //     url:'https://favqs.com/api/qotd',
+    //     type: 'GET',
+    //     success:function(data){
+    //         $("#quote").text(data.quote.body);
+    //         console.log(data);
+    //         console.log($("#quote"));
+    //     }
+    // });
+    
 }
   
 
@@ -260,6 +281,13 @@ count++;
 }
 
 function n(){
-    arr.forEach(ar=>{$("#lapContent").append("<h6 id='list'>lap "+ar.lap+"&nbsp;&nbsp;&nbsp;"+ar.hours+":"+ar.minutes+":"+ar.seconds+"<h6>")});
+    let hrs;
+    let mns;
+    let secs;
+    arr.forEach(ar=>{ 
+        (ar.hours<10)? hrs = "0"+ar.hours : hrs = ar.hours;
+        (ar.minutes<10)?mns = "0"+ar.minutes : mns = ar.minutes;
+        (ar.seconds<10)?secs = "0"+ar.seconds : secs = ar.seconds;
+        $("#lapContent").append("<h6 id='list'>lap "+ar.lap+"&nbsp;&nbsp;&nbsp;"+hrs+":"+mns+":"+secs+"<h6>")});
 }
 

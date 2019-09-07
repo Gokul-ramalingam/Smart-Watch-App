@@ -178,7 +178,7 @@ cursor: pointer;
     margin-top: 15%;
     font-size: 6em;
     text-align: center;
-    color: #F8F9F9;
+    color: var(--Primary-color);
     line-height: .4em;
     font-family: sans-serif; 
     font-weight:bold;
@@ -243,18 +243,19 @@ cursor: pointer;
 }
 
 #textMessage{
-   margin-top: 20%; 
+   margin-top: 15%; 
    background-color: #FF3031;
-   height: 150%;
+   height: 200%;
    border-radius: 10%;
    text-align: center;
+   overflow: scroll;
 }
 
 #indicator{
-    margin-top: 55%;
+    margin-top: 65%;
     text-align: center;
     color: #FF3031;
-    font-size: .8em;
+    font-size: .7em;
 }
 
 #musicScreen{
@@ -343,7 +344,6 @@ cursor: pointer;
     width: 100%;
     margin-left: .1%;
     margin-top: 10%;
-    
 }
 
 #list{
