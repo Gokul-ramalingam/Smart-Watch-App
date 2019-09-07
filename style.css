@@ -34,6 +34,8 @@
     background: #242426;
     border-top-left-radius: 30%;
     border-top-right-radius: 30%;   
+    justify-content: center;
+    align-items: center;
 }
 
 .container-fluid .row .content .screen{
@@ -55,7 +57,8 @@
     background: #242426;
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
-    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .container-fluid .row .content .screen .main{
@@ -118,6 +121,9 @@
     margin-left:5%;
     cursor: pointer;
 } */
+#homeButton:hover{
+    color: #E71C23 !important;
+}
 
 #button1{
     font-size:1.5em;  
@@ -125,7 +131,7 @@
     margin-top:50%;
     /* margin-left: 15%; */
     cursor: pointer;
-    position: absolute;
+    /* position: absolute; */
 }
 
 #button2{
@@ -134,7 +140,7 @@
     margin-top:50%;
     cursor: pointer;
     /* margin-left: 15%; */
-    position: absolute;
+    /* position: absolute; */
 }
 
  #button3{
@@ -143,7 +149,13 @@
     margin-top:50%;
     cursor: pointer;
     /* margin-left: 15%; */
-    position: absolute;
+    /* position: absolute; */
+}
+
+#homeButton{
+font-size: 1.5em;
+color: #bbaeae;
+cursor: pointer;
 }
 
 #wish{
@@ -222,7 +234,8 @@
     height: 20%;
     margin-left: 2.5%;
     background-color: #1890f0;
-    border-radius: 5%;
+    border-radius: 4%;
+    cursor: pointer;
 }
 #individualText{
     width: 95%;

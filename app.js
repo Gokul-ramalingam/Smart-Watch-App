@@ -30,6 +30,7 @@ $( document ).ready(function() {
     $("#musicScreen").hide();
     $("#timerScreen").hide();
     $("#timerInputScreen").hide();
+    $("#homeButton").css("color",'#FF3031');
    setInterval(timerWatch,1000);
 
    messageArray.forEach((txt)=>{
@@ -79,6 +80,7 @@ function enableMessageWindow(){
     $("#button1").css("color",'#1890f0');
     $("#button3").css("color",'#bbaeae');
     $("#button2").css("color",'#bbaeae');
+    $("#homeButton").css("color",'#bbaeae');
     $("#messageScreen").show();
     $("#timerInputScreen").hide();
 }
@@ -88,6 +90,7 @@ function enableMusicWindow(){
     $("#button2").css("color",'#1890f0');
     $("#button3").css("color",'#bbaeae');
     $("#button1").css("color",'#bbaeae');
+    $("#homeButton").css("color",'#bbaeae');
     $("#messageScreen").hide();
     $("#musicScreen").show();
     $("#textScreen").hide();
@@ -100,6 +103,7 @@ function enableTimerWindow(){
     $("#button3").css("color", '#1890f0');
     $("#button2").css("color",'#bbaeae');
     $("#button1").css("color",'#bbaeae');
+    $("#homeButton").css("color",'#bbaeae');
     $("#messageScreen").hide();
     $("#musicScreen").hide();
     $("#textScreen").hide();
@@ -112,6 +116,7 @@ function enableInputTimerWindow(){
     $("#button3").css("color", '#1890f0');
     $("#button2").css("color",'#bbaeae');
     $("#button1").css("color",'#bbaeae');
+    $("#homeButton").css("color",'#bbaeae');
     $("#messageScreen").hide();
     $("#musicScreen").hide();
     $("#textScreen").hide();
@@ -121,7 +126,18 @@ function enableInputTimerWindow(){
 }
 
 
-
+function homeScreen(){
+    $("#button3").css("color", '#bbaeae');
+    $("#button2").css("color",'#bbaeae');
+    $("#button1").css("color",'#bbaeae');
+    $("#messageScreen").hide();
+    $("#musicScreen").hide();
+    $("#textScreen").hide();
+    $("#timerScreen").hide();
+    $("#timerInputScreen").hide();
+    $("#initialScreen").show();
+    $("#homeButton").css("color",'#FF3031');
+}
   
 
 
