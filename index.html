@@ -1,7 +1,7 @@
 <!-- Author      : Gokul 
      Description : This is a web based smart watch application which provides various 
      features to the users with enlightened user design and user experience 
-     including app for text messages, music ,timer-->
+     including app for text messages, music ,timer -->
 
 <html>
     <head>
@@ -135,35 +135,47 @@
                         <div class="row" id="clockdiv">
                             <div class="col">
                                 <div>
-                                    <b><span class="hours"></span></b>
-                                    <div id="hourTitle" class="smalltext">Hours</div>
+                                    <b><span class="hours">00</span></b>
+                                    <div id="hourTitle" class="smalltext">Minute</div>
                                   </div>
                             </div>
                             <div class="col">
                                 <div>
-                                    <b><span id="minute" class="minutes"></span></b>
-                                    <div id="minuteTitle" class="smalltext">Minutes</div>
+                                    <b><span id="minute" class="minutes">00</span></b>
+                                    <div id="minuteTitle" class="smalltext">Second</div>
                                   </div>
                             </div>
                             <div class="col">
                                 <div>
-                                    <b><span id="second" class="seconds"></span></b>
-                                    <div id="secondTitle" class="smalltext">Seconds</div>
+                                    <b><span id="second" class="seconds">00</span></b>
+                                    <div id="secondTitle" class="smalltext">Millisec</div>
                                   </div>
                             </div>
                         </div> 
                         <div class="row">
                           <div id="pauseButton" class="col">
-                            <i class="fa fa-play"></i>
+                            <i class="fa fa-play" id="start"></i>
                           </div>
+                          <div id="pauseButton" class="col">
+                              <i class="fa fa-pause" id="stop"></i>
+                            </div>
+                            <div id="pauseButton" class="col">
+                                <i class="fa fa-refresh" id="clear"></i>
+                              </div>
+                              <div id="pauseButton" class="col">
+                                  <i class="fa fa-hourglass" id="lap"></i>
+                                </div>
+                                <div id="pauseButton" class="col">
+                                    <i class="fa fa-list" id="listLap" onclick="enableInputTimerWindow()"></i>
+                                  </div>
                         </div>
                     </div>
                     </div>
                     <!--Ends Here Part5-->
 
 
-<!--Begins Here Part6-->
-<div id="timerInputScreen">
+<!-- Begins Here Part6-->
+    <div id="timerInputScreen">
     <div class="row"> 
     <div class="col" id="mTimer">
       Timer
@@ -172,21 +184,9 @@
       10:19
    </div>
   </div>
-  <div id="timer">
-      <div class="row" id="inputRow">
-          <div class="col">
-              <div>
-                <input type=text id="inputTime" name="input" value="" placeholder="12:00:00"> 
-              </div>
-         </div>
-      </div> 
-      <div class="row">
-          <div id="pauseButton" class="col">
-            <i class="fa fa-play" onclick="enableTimerWindow()"></i>
-          </div>
-        </div>
-  </div>
-  </div>
+      <div class="row" id="lapContent">
+      </div>
+  </div> 
   <!--Ends Here Part6-->
 
 
@@ -199,7 +199,7 @@
                 <div class="button2" onclick="enableMusicWindow()">
                  <i class="fa fa-music"></i>
                 </div>
-                <div class="button3" onclick="enableInputTimerWindow()">
+                <div class="button3" onclick="enableTimerWindow()">
                   <i class="fa fa-clock-o"></i>
                 </div>
               </div>

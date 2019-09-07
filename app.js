@@ -7,7 +7,7 @@ let messageArray=[
     {id:6,from:'78546',message:"This is message 6"}
 ]
 
-
+let array1 = [];
 
 function enableMessageWindow(){
     $("#initialScreen").hide();
@@ -40,7 +40,7 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/me/playlists',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQD3JM-p0XpxWJbTSR1-ogbp92dcjMBPuyEUZqT3y_JHMmd9d0_NU5qnEWfYexs-1G21CxdEvcsOLTmOoJky517fxC0oK2gNqcUapsuoBuMLfJHLxHMWtJ76n7TFW4AVlfL1KRhZTgaXrb2gOT0TM7cvqAqigqzt7RJJXAtp2NlePZV-XrrS&refresh_token=AQBt-MtuR9m6J4jGIKXQnoNdNFkRioM0HpKGnfKwwBf3-o_VP4Zrx5YSmVG7hWxwsVUchTtMXBKm8jb92uOPblsxAtMHt8qdHfBxikiHssUMtj-yP1Yu6dZ2O19ci2njXiAwlQ'
+        'Authorization' : 'Bearer ' + 'BQCrYWa-yedEtQP0dI9_Jtqft_L0ShKd_IeADFExaelJDauPGo-z87lJMVsW8mOGWelaIpCS-JEN6N8e0-OpKrw1dAzjyTh25wLcHouol1bBIFzf0JDVAGGJN043m2JQ4w9FLycSCv2HYDu-KKAE84W4Ln_O0Jv0III8nJWHW6Bdm7FgslM6&refresh_token=AQBoaFnpSUo49OcJMz_hiwUEZwL6wCs7mxtAOttQ9LlGZv7TVFs3dyajwwuMSCipnh0kSd1MahWgts0lg4SDQxtBkpQoY8etOAWr5qqVUhgYbQS6P1VmnMiZrhykFE02hbNNBA'
     },
     success: function(data) {
         console.log(data.items[0].uri);
@@ -69,6 +69,16 @@ function func1(id){
   $("#individualMessage").html(messageObject[0].message);
 }
 
+function enableMessageWindow(){
+    $("#initialScreen").hide();
+    $("#musicScreen").hide();
+    $("#timerScreen").hide();
+    $("#textScreen").hide();
+    $(".button1").css("background-color",'#1890f0');
+    $(".button3").css("background-color",'#1b1b1b');
+    $(".button2").css("background-color",'#1b1b1b');
+    $("#messageScreen").show();
+}
 
 function enableMusicWindow(){
     $("#initialScreen").hide();
@@ -92,8 +102,6 @@ function enableTimerWindow(){
     $("#textScreen").hide();
     $("#timerInputScreen").hide();
     $("#timerScreen").show();
-    let timing = $("#inputTime").val();
-    timer(timing);
 }
 
 function enableInputTimerWindow(){
@@ -106,42 +114,10 @@ function enableInputTimerWindow(){
     $("#textScreen").hide();
     $("#timerScreen").hide();
     $("#timerInputScreen").show();
+    n();
 }
 
-function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    return {
-      'total': t,
-      'hours': hours,
-      'minutes': minutes,
-      'seconds': seconds
-    };
-  }
-  
-  function initializeClock(id, endtime) {
-    var clock = document.getElementById(id);
-    var hoursSpan = clock.querySelector('.hours');
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
-  
-    function updateClock() {
-      var t = getTimeRemaining(endtime);
-  
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-  
-      if (t.total <= 0) {
-        clearInterval(timeinterval);
-      }
-    }
-  
-    updateClock();
-    var timeinterval = setInterval(updateClock, 1000);
-  }
+
 
   
 
@@ -180,7 +156,7 @@ function timerWatch(){
         let dayInString = monthArray[dayInNumber];
         let dateInNumber = date.getDate();
         let year = date.getFullYear();
-        let timeArray = val.split(":");
+        // let timeArray = val.split(":");
     //     let fixedTiming = timeArray[0]+date.getHours();
     //     if(fixedTiming >= 23)
     //     {
@@ -196,3 +172,69 @@ function timerWatch(){
         var deadline = new Date(Date.parse(new Date(dayInString+" "+dayInNumber+", "+year+" "+val)) + 15 * 24 * 60 * 60 * 1000);
         initializeClock('clockdiv', deadline);
     }
+
+
+
+    
+
+    var h = document.getElementsByClassName('hours')[0];
+    var m = document.getElementById('minute');
+    var s = document.getElementById('second');
+    var start = document.getElementById('start');
+    var stop = document.getElementById('stop');
+    var clear = document.getElementById('clear');
+    var seconds = 0, minutes = 0, hours = 0;
+    var t;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    h.textContent = hours ? (hours > 9 ? hours : "0" + hours) : "00";
+    m.textContent = minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00";
+    s.textContent = seconds > 9 ? seconds : "0" + seconds;
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 10);
+}
+// timer();
+
+
+/* Start button */
+start.onclick = timer;
+
+/* Stop button */
+stop.onclick = function() {
+    console.log("check");
+    clearTimeout(t);
+}
+
+/* Clear button */
+clear.onclick = function() {
+    h.textContent = "00";
+    m.textContent = "00";
+    s.textContent = "00";
+    seconds = 0; minutes = 0; hours = 0;
+}
+let arr=[];
+let count = 1;
+let hr,sc,mn;
+lap.onclick = function() {
+arr.push({lap:count,hours:hours,minutes:minutes,seconds:seconds});
+count++;
+// console.log(arr);
+}
+
+function n(){
+    arr.forEach(ar=>{$("#lapContent").append("<h6 id='list'>lap "+ar.lap+"&nbsp;&nbsp;&nbsp;"+ar.hours+":"+ar.minutes+":"+ar.seconds+"<h6>")});
+}
+
