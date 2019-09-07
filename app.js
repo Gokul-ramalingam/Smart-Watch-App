@@ -30,7 +30,7 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/playlists/4hknLqR95bP0hpTBTQxrsd',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQBA7MQL3soPHUEivNskDnTNOyCyhsRo0dZ1sEVqmlqVfcSI_DzlSPnCQ9xf04Zvpkz0vt1sXSoeEdk2Ll-7CKTme195d864pKXuQBKPikvZNAOAiBsIycb56aZfTbowcb7saVvxXVf9hgEMsr-kAnBmIiEpejDXjoU6z1LGHZyeymavnxHL&refresh_token=AQDS5UhSiM3xGdHNZxAWC1c9nD3n1Y_SEVdsHpH0Rpak6GIj08WyI9qiIcW3P-ROg4uHEDSEjaoU17lKGyxPoUxJzOCnQdc1eYt4DXvZO6S33oZ9X1-jKBEE_UXGre1QUwDW4Q'
+        'Authorization' : 'Bearer ' + 'BQAtOur9T5yNuRlibo4h6DJ6rkQzNZFsmM9_kdyqWwEWV1_xmKkuGC50p_YVkzzjVpFRkj61YzVAfTY_4WaZDnVb3ahk_M0zV3juaInavdzV7NmYM8gYBVPLKLnjZ6HU8hTjLeVlxoOebCZBtTWP5W5bzXOWNivcfdbuYGoNBHccRs6_7SL5&refresh_token=AQDS5Q-LOin_1sGe7NPNaO9sqCVzg1bhaFPZY8EyUbUw-mxsPgPTCa9FkD1ecDaEVX9ZXeaRfP2LQq7EkigqyLB9ZmCDYiJra1OFAR-vDaJdY1v3Estr2B8QoVeSc9axsvFjjA'
     },
     success: function(data) {
         // console.log(data.uri);
