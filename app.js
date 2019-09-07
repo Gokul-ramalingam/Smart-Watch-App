@@ -43,7 +43,7 @@ $( document ).ready(function() {
     url: 'https://api.spotify.com/v1/playlists/4hknLqR95bP0hpTBTQxrsd',
     type: 'GET',
     headers :{
-        'Authorization' : 'Bearer ' + 'BQB_9ffaprEIJsqz6hUP4REgFDUugzFhSbVoZS0jy4n6v3L-T9G95lQux2_k4sXr--U3T-8tJC-_2miOTtViUYdrADd6kRXeX7lwYCZ7EWhpGVXC8PnfemAL-JF7Oo--pHGzaHyMxfum1FOGIUS9UHeZw1QaxJQrUBUk38iy0Enzoru1IJzR&refresh_token=AQAVArc5C1GSo1GwGAv_sYG8TyE1-W3vCla0WhfD8Hvzj111KO9dt-dGLZpUXTSIo_qFJ1gC180bR0MrvCdWjkdQiSqsziFOoCBGQy2rAXKfBRiMrs8k18-Uos9mM0khg8ZsDA'
+        'Authorization' : 'Bearer ' + 'BQCv-scUHsLaMuAgH7mcMySD12xGwoqzz4g9CUFJyN_AkoZbiH_BLr2qu2NIiisEMqBr3wfad6gQ2ofoG7r7eE5mtdwUkKHerrLSN25-94EEE2veegfxq--SG1sQSCp8M4p8ymJjyg3RGnMdwYXaUz0-GAFxNXphZCHLm6x8gFEmbe3K9Mkl&refresh_token=AQA15Wuq50YrJdgyyPr9EffeFQoXT2oma1_BK6KsKNlTYtIiiq4QYGOH7Wzt7QjljJZJcp9HeJuSF68Wlu30DxuYtd3PPo0sVulleQze_11SSPfm0VeLS896wPz2Nmxim5ZZfw'
     },
     success: function(data) {
         console.log(data.uri);
@@ -202,19 +202,6 @@ function timerWatch(){
         let dayInString = monthArray[dayInNumber];
         let dateInNumber = date.getDate();
         let year = date.getFullYear();
-        // let timeArray = val.split(":");
-    //     let fixedTiming = timeArray[0]+date.getHours();
-    //     if(fixedTiming >= 23)
-    //     {
-    //         fixedTiming -= 23;
-    //     }
-    //   console.log(fixedTiming);
-    //     let minutes = timeArray[1];
-    //     if(minutes < 10)
-    //         minutes = "0"+minutes;
-    //     let seconds = timeArray[2];
-    //     if(seconds < 10)
-    //        seconds = "0"+seconds;
         var deadline = new Date(Date.parse(new Date(dayInString+" "+dayInNumber+", "+year+" "+val)) + 15 * 24 * 60 * 60 * 1000);
         initializeClock('clockdiv', deadline);
     }
@@ -223,14 +210,14 @@ function timerWatch(){
 
     
 
-    var h = document.getElementsByClassName('hours')[0];
-    var m = document.getElementById('minute');
-    var s = document.getElementById('second');
-    var start = document.getElementById('start');
-    var stop = document.getElementById('stop');
-    var clear = document.getElementById('clear');
-    var seconds = 0, minutes = 0, hours = 0;
-    var t;
+    let h = document.getElementsByClassName('hours')[0];
+    let m = document.getElementById('minute');
+    let s = document.getElementById('second');
+    let start = document.getElementById('start');
+    let stop = document.getElementById('stop');
+    let clear = document.getElementById('clear');
+    let seconds = 0, minutes = 0, hours = 0;
+    let t;
 
 function add() {
     seconds++;
