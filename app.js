@@ -7,22 +7,9 @@ let messageArray=[
     {id:6,from:'78546',message:"This is message 6"}
 ]
 
-// let array1 = [];
 
-// function enableMessageWindow(){
-//     $("#initialScreen").hide();
-//     $("#musicScreen").hide();
-//     $("#timerScreen").hide();
-//     $("#textScreen").hide();
-//     $("#timerInputScreen").hide();
-//     $("#button1").css("color",'#1890f0');
-//     $("#button3").css("color",'#bbaeae');
-//     $("#button2").css("color",'#bbaeae');
-//     $("#messageScreen").show();
-    
-// }
 
-var b = new Date();
+// var b = new Date();
 
 $( document ).ready(function() {
     $("#messageScreen").hide();
@@ -34,7 +21,7 @@ $( document ).ready(function() {
    setInterval(timerWatch,1000);
 
    messageArray.forEach((txt)=>{
-       var b = '<h6 id="messageList" onclick="func1('+txt.id+')"><b id="number">'+txt.from+'</b><br><span id="text">'+txt.message+'</span></h6>'
+       let b = '<h6 id="messageList" onclick="func1('+txt.id+')"><b id="number">'+txt.from+'</b><br><span id="text">'+txt.message+'</span></h6>'
        $("#receivedMessages").append(b);
     //    console.log(b);
    });
@@ -46,7 +33,7 @@ $( document ).ready(function() {
         'Authorization' : 'Bearer ' + 'BQCv-scUHsLaMuAgH7mcMySD12xGwoqzz4g9CUFJyN_AkoZbiH_BLr2qu2NIiisEMqBr3wfad6gQ2ofoG7r7eE5mtdwUkKHerrLSN25-94EEE2veegfxq--SG1sQSCp8M4p8ymJjyg3RGnMdwYXaUz0-GAFxNXphZCHLm6x8gFEmbe3K9Mkl&refresh_token=AQA15Wuq50YrJdgyyPr9EffeFQoXT2oma1_BK6KsKNlTYtIiiq4QYGOH7Wzt7QjljJZJcp9HeJuSF68Wlu30DxuYtd3PPo0sVulleQze_11SSPfm0VeLS896wPz2Nmxim5ZZfw'
     },
     success: function(data) {
-        console.log(data.uri);
+        // console.log(data.uri);
         $('#frame-id').attr("src", "https://embed.spotify.com/?uri="+data.uri);
     }
 });
@@ -56,16 +43,11 @@ $( document ).ready(function() {
        type: 'GET',
        success:function(data){
            $("#quote").text(data.quote.body);
-           console.log(data);
-           console.log($("#quote"));
        }
    })
     
 });
 
-// $(".button1").click(function(){
-//     $("#receivedMessages").append("<h6 id='messageList'>55556 <br><span>Sample text</span></h6>");
-//   });
 
 function func1(id){
   
