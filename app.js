@@ -40,14 +40,14 @@ $( document ).ready(function() {
    });
 
     $.ajax({
-    url: 'https://api.spotify.com/v1/me/playlists',
+    url: 'https://api.spotify.com/v1/playlists/4hknLqR95bP0hpTBTQxrsd',
     type: 'GET',
     headers :{
         'Authorization' : 'Bearer ' + 'BQB_9ffaprEIJsqz6hUP4REgFDUugzFhSbVoZS0jy4n6v3L-T9G95lQux2_k4sXr--U3T-8tJC-_2miOTtViUYdrADd6kRXeX7lwYCZ7EWhpGVXC8PnfemAL-JF7Oo--pHGzaHyMxfum1FOGIUS9UHeZw1QaxJQrUBUk38iy0Enzoru1IJzR&refresh_token=AQAVArc5C1GSo1GwGAv_sYG8TyE1-W3vCla0WhfD8Hvzj111KO9dt-dGLZpUXTSIo_qFJ1gC180bR0MrvCdWjkdQiSqsziFOoCBGQy2rAXKfBRiMrs8k18-Uos9mM0khg8ZsDA'
     },
     success: function(data) {
-        console.log(data.items[0].uri);
-        $('#frame-id').attr("src", "https://embed.spotify.com/?uri="+data.items[0].uri);
+        console.log(data.uri);
+        $('#frame-id').attr("src", "https://embed.spotify.com/?uri="+data.uri);
     }
 });
 
