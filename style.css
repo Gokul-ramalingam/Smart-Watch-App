@@ -57,8 +57,9 @@
     background: #242426;
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 
 .container-fluid .row .content .screen .main{
@@ -131,7 +132,7 @@
     margin-top:50%;
     /* margin-left: 15%; */
     cursor: pointer;
-    /* position: absolute; */
+    position: absolute;
 }
 
 #button2{
@@ -140,7 +141,7 @@
     margin-top:50%;
     cursor: pointer;
     /* margin-left: 15%; */
-    /* position: absolute; */
+    position: absolute;
 }
 
  #button3{
@@ -149,7 +150,7 @@
     margin-top:50%;
     cursor: pointer;
     /* margin-left: 15%; */
-    /* position: absolute; */
+    position: absolute;
 }
 
 #homeButton{

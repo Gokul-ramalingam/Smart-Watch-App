@@ -12,11 +12,7 @@ let messageArray=[
 // var b = new Date();
 
 $( document ).ready(function() {
-    $("#messageScreen").hide();
-    $("#textScreen").hide();
-    $("#musicScreen").hide();
-    $("#timerScreen").hide();
-    $("#timerInputScreen").hide();
+    $("#messageScreen,#textScreen,#musicScreen,#timerScreen,#timerInputScreen").hide();
     $("#homeButton").css("color",'#FF3031');
    setInterval(timerWatch,1000);
 
@@ -26,17 +22,14 @@ $( document ).ready(function() {
     //    console.log(b);
    });
 
-    $.ajax({
-    url: 'https://api.spotify.com/v1/playlists/4hknLqR95bP0hpTBTQxrsd',
-    type: 'GET',
-    headers :{
-        'Authorization' : 'Bearer ' + 'BQAtOur9T5yNuRlibo4h6DJ6rkQzNZFsmM9_kdyqWwEWV1_xmKkuGC50p_YVkzzjVpFRkj61YzVAfTY_4WaZDnVb3ahk_M0zV3juaInavdzV7NmYM8gYBVPLKLnjZ6HU8hTjLeVlxoOebCZBtTWP5W5bzXOWNivcfdbuYGoNBHccRs6_7SL5&refresh_token=AQDS5Q-LOin_1sGe7NPNaO9sqCVzg1bhaFPZY8EyUbUw-mxsPgPTCa9FkD1ecDaEVX9ZXeaRfP2LQq7EkigqyLB9ZmCDYiJra1OFAR-vDaJdY1v3Estr2B8QoVeSc9axsvFjjA'
-    },
-    success: function(data) {
+    // $.ajax({
+    // url: 'https://api.spotify.com/v1/playlists/4hknLqR95bP0hpTBTQxrsd',
+    // type: 'GET',
+    // success: function(data) {
         // console.log(data.uri);
-        $('#frame-id').attr("src", "https://embed.spotify.com/?uri="+data.uri);
-    }
-});
+        $('#frame-id').attr("src", "https://embed.spotify.com/?uri=spotify:playlist:4hknLqR95bP0hpTBTQxrsd");
+//     }
+// });
 
    $.ajax({
        url:'https://favqs.com/api/qotd',
@@ -53,92 +46,47 @@ function func1(id){
   
   let messageObject = messageArray.filter((obj)=>id===obj.id);
   
-  $("#messageScreen").hide();
+  $("#messageScreen,#musicScreen,#initialScreen,#timerScreen,#timerInputScreen").hide();
   $("#textScreen").show();
-  $("#musicScreen").hide();
-  $("#initialScreen").hide();
-  $("#timerScreen").hide();
-  $("#timerInputScreen").hide();
-//   console.log(messageObject);
   $("#individualNumber").html(messageObject[0].from);
   $("#individualMessage").html(messageObject[0].message);
 }
 
 function enableMessageWindow(){
-    $("#initialScreen").hide();
-    $("#musicScreen").hide();
-    $("#timerScreen").hide();
-    $("#textScreen").hide();
+    $("#initialScreen,#musicScreen,#timerScreen,#textScreen,#timerInputScreen").hide();
     $("#button1").css("color",'#1890f0');
-    $("#button3").css("color",'#bbaeae');
-    $("#button2").css("color",'#bbaeae');
-    $("#homeButton").css("color",'#bbaeae');
+    $("#button3,#button2,#homeButton").css("color",'#bbaeae');
     $("#messageScreen").show();
-    $("#timerInputScreen").hide();
 }
 
 function enableMusicWindow(){
-    $("#initialScreen").hide();
+    $("#initialScreen,#messageScreen,#textScreen,#timerScreen,#timerInputScreen").hide();
     $("#button2").css("color",'#1890f0');
-    $("#button3").css("color",'#bbaeae');
-    $("#button1").css("color",'#bbaeae');
-    $("#homeButton").css("color",'#bbaeae');
-    $("#messageScreen").hide();
+    $("#button3,#button1,#homeButton").css("color",'#bbaeae');
     $("#musicScreen").show();
-    $("#textScreen").hide();
-    $("#timerScreen").hide();
-    $("#timerInputScreen").hide();
 }
 
 function enableTimerWindow(){
-    $("#initialScreen").hide();
+    $("#initialScreen,#messageScreen,#musicScreen,#textScreen,#timerInputScreen").hide();
     $("#button3").css("color", '#1890f0');
-    $("#button2").css("color",'#bbaeae');
-    $("#button1").css("color",'#bbaeae');
-    $("#homeButton").css("color",'#bbaeae');
-    $("#messageScreen").hide();
-    $("#musicScreen").hide();
-    $("#textScreen").hide();
-    $("#timerInputScreen").hide();
-    $("#timerScreen").show();
+    $("#button2,#button1,#homeButton").css("color",'#bbaeae');
+    $("#timerScreen").show()
 }
 
 function enableInputTimerWindow(){
-    $("#initialScreen").hide();
+    $("#initialScreen,#messageScreen,#musicScreen,#textScreen,#timerScreen").hide();
     $("#button3").css("color", '#1890f0');
-    $("#button2").css("color",'#bbaeae');
-    $("#button1").css("color",'#bbaeae');
-    $("#homeButton").css("color",'#bbaeae');
-    $("#messageScreen").hide();
-    $("#musicScreen").hide();
-    $("#textScreen").hide();
-    $("#timerScreen").hide();
-    $("#timerInputScreen").show();
-    n();
+    $("#button2,#button1,#homeButton").css("color",'#bbaeae');
+    $("#timerInputScreen").show()
+    lap1();
 }
 
 
 function homeScreen(){
-    $("#button3").css("color", '#bbaeae');
-    $("#button2").css("color",'#bbaeae');
-    $("#button1").css("color",'#bbaeae');
-    $("#messageScreen").hide();
-    $("#musicScreen").hide();
-    $("#textScreen").hide();
-    $("#timerScreen").hide();
-    $("#timerInputScreen").hide();
+    $("#button3,#button2,#button1").css("color", '#bbaeae');
+    $("#messageScreen,#musicScreen,#textScreen,#timerScreen,#timerInputScreen").hide();
     $("#initialScreen").show();
     $("#homeButton").css("color",'#FF3031');
-
-    // $.ajax({
-    //     url:'https://favqs.com/api/qotd',
-    //     type: 'GET',
-    //     success:function(data){
-    //         $("#quote").text(data.quote.body);
-    //         console.log(data);
-    //         console.log($("#quote"));
-    //     }
-    // });
     
 }
   
@@ -171,10 +119,7 @@ function timerWatch(){
      $("#min").html(minutes);
      
      $("#wishBasedOnTime").html(wishInString);
-     $("#time").html(hr+":"+minutes);
-     $("#mtime").html(hr+":"+minutes);
-     $("#ttime").html(hr+":"+minutes);
-     $("#ltime").html(hr+":"+minutes);
+     $("#time,#mtime,#ttime,#ltime").html(hr+":"+minutes);
     }
 
     let date = new Date();
@@ -249,7 +194,7 @@ count++;
 // console.log(arr);
 }
 
-function n(){
+function lap1(){
     let hrs;
     let mns;
     let secs;
