@@ -11,7 +11,7 @@ let messageArray=[
 
 // var b = new Date();
 
-$( document ).ready(()=> {
+$( document ).ready(function() {
     $("#messageScreen,#textScreen,#musicScreen,#timerScreen,#timerInputScreen").hide();
     $("#homeButton").css("color",'#FF3031');
    setInterval(timerWatch,1000);
@@ -92,7 +92,7 @@ let homeScreen = () => {
   
 
 
-let timerWatch = () => {
+let timerWatch = () =>{
     //  console.log(this.dayInNumber);
      let hours = new Date().getHours();
      let wishInString = hours>3 && hours<11?'Good Morning':
@@ -123,7 +123,7 @@ let timerWatch = () => {
     }
 
     let date = new Date();
-        let timer = (val) => {
+    function timer(val){
         let monthArray=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         let dayInNumber = date.getMonth();
         let dayInString = monthArray[dayInNumber];
@@ -146,7 +146,7 @@ let timerWatch = () => {
     let seconds = 0, minutes = 0, hours = 0;
     let t;
 
-let add = () => {
+ let add = () => {
     seconds++;
     if (seconds >= 60) {
         seconds = 0;
@@ -163,7 +163,7 @@ let add = () => {
 
     timer();
 }
-let timer = ()=> {
+ timer = () => {
     t = setTimeout(add, 10);
 }
 // timer();
@@ -188,7 +188,7 @@ clear.onclick = () => {
 let arr=[];
 let count = 1;
 let hr,sc,mn;
-lap.onclick = function() {
+lap.onclick = () => {
 arr.push({lap:count,hours:hours,minutes:minutes,seconds:seconds});
 count++;
 // console.log(arr);
