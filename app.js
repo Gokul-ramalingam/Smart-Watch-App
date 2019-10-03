@@ -11,7 +11,7 @@ let messageArray=[
 
 // var b = new Date();
 
-$( document ).ready(function() {
+$( document ).ready(()=> {
     $("#messageScreen,#textScreen,#musicScreen,#timerScreen,#timerInputScreen").hide();
     $("#homeButton").css("color",'#FF3031');
    setInterval(timerWatch,1000);
@@ -42,7 +42,7 @@ $( document ).ready(function() {
 });
 
 
-function func1(id){
+let func1 = (id) => {
   
   let messageObject = messageArray.filter((obj)=>id===obj.id);
   
@@ -52,28 +52,28 @@ function func1(id){
   $("#individualMessage").html(messageObject[0].message);
 }
 
-function enableMessageWindow(){
+let enableMessageWindow = () => {
     $("#initialScreen,#musicScreen,#timerScreen,#textScreen,#timerInputScreen").hide();
     $("#button1").css("color",'#1890f0');
     $("#button3,#button2,#homeButton").css("color",'#bbaeae');
     $("#messageScreen").show();
 }
 
-function enableMusicWindow(){
+let enableMusicWindow = () => {
     $("#initialScreen,#messageScreen,#textScreen,#timerScreen,#timerInputScreen").hide();
     $("#button2").css("color",'#1890f0');
     $("#button3,#button1,#homeButton").css("color",'#bbaeae');
     $("#musicScreen").show();
 }
 
-function enableTimerWindow(){
+let enableTimerWindow = () => {
     $("#initialScreen,#messageScreen,#musicScreen,#textScreen,#timerInputScreen").hide();
     $("#button3").css("color", '#1890f0');
     $("#button2,#button1,#homeButton").css("color",'#bbaeae');
     $("#timerScreen").show()
 }
 
-function enableInputTimerWindow(){
+let enableInputTimerWindow = () => {
     $("#initialScreen,#messageScreen,#musicScreen,#textScreen,#timerScreen").hide();
     $("#button3").css("color", '#1890f0');
     $("#button2,#button1,#homeButton").css("color",'#bbaeae');
@@ -82,7 +82,7 @@ function enableInputTimerWindow(){
 }
 
 
-function homeScreen(){
+let homeScreen = () => {
     $("#button3,#button2,#button1").css("color", '#bbaeae');
     $("#messageScreen,#musicScreen,#textScreen,#timerScreen,#timerInputScreen").hide();
     $("#initialScreen").show();
@@ -92,7 +92,7 @@ function homeScreen(){
   
 
 
-function timerWatch(){
+let timerWatch = () => {
     //  console.log(this.dayInNumber);
      let hours = new Date().getHours();
      let wishInString = hours>3 && hours<11?'Good Morning':
@@ -123,7 +123,7 @@ function timerWatch(){
     }
 
     let date = new Date();
-    function timer(val){
+        let timer = (val) => {
         let monthArray=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         let dayInNumber = date.getMonth();
         let dayInString = monthArray[dayInNumber];
@@ -146,7 +146,7 @@ function timerWatch(){
     let seconds = 0, minutes = 0, hours = 0;
     let t;
 
-function add() {
+let add = () => {
     seconds++;
     if (seconds >= 60) {
         seconds = 0;
@@ -163,7 +163,7 @@ function add() {
 
     timer();
 }
-function timer() {
+let timer = ()=> {
     t = setTimeout(add, 10);
 }
 // timer();
@@ -173,13 +173,13 @@ function timer() {
 start.onclick = timer;
 
 /* Stop button */
-stop.onclick = function() {
+stop.onclick = () => {
     console.log("check");
     clearTimeout(t);
 }
 
 /* Clear button */
-clear.onclick = function() {
+clear.onclick = () => {
     h.textContent = "00";
     m.textContent = "00";
     s.textContent = "00";
@@ -194,7 +194,7 @@ count++;
 // console.log(arr);
 }
 
-function lap1(){
+let lap1 = () => {
     let hrs;
     let mns;
     let secs;
